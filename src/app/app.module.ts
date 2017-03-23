@@ -6,8 +6,18 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
+import { AngularFireModule } from 'angularfire2';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+export const firebaseConfig = {
+    apiKey: "AIzaSyBOfOSUbi1VzB4tybeB_p5oRakyo5_pmyQ",
+    authDomain: "mapd122-assignment3.firebaseapp.com",
+    databaseURL: "https://mapd122-assignment3.firebaseio.com",
+    storageBucket: "mapd122-assignment3.appspot.com",
+    messagingSenderId: "722611349905"
+  };
 
 @NgModule({
   declarations: [
@@ -18,7 +28,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [

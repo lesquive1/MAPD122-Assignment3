@@ -1,7 +1,14 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Notes</ion-title>
   </ion-navbar>
+    <ion-toolbar>
+      <ion-buttons end>
+      <button ion-button icon-right color="royal" (click)="addItem()" >
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
@@ -16,3 +23,4 @@
   </ion-list>
 
 </ion-content>
+

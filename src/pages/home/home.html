@@ -4,7 +4,8 @@
   </ion-navbar>
     <ion-toolbar>
       <ion-buttons end>
-      <button ion-button icon-right color="royal" (click)="addItem()" >
+      <!-- <button ion-button icon-right color="royal" (click)="addItem()" > -->
+      <button (click)="goToOtherPage()" >
         <ion-icon name="add"></ion-icon>
       </button>
     </ion-buttons>
@@ -21,6 +22,8 @@
       <p>{{note['content']}}</p>
     </ion-item>
   </ion-list>
+
+  <!-- <button [navPush]="newNotePage">Go To About</button> -->
 
 </ion-content>
 

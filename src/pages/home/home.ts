@@ -3,11 +3,24 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
+//import {HomePage} from 'start';
+//import {Page} from 'ionic-angular';
+import {NewNotePage} from '../new-note/new-note';
+
+//import {Page} from 'ionic-angular';
+//import {AboutPage} from '../about/about';
+
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+
+  // First page to push onto the stack
+  // rootPage = StartPage;
+
+  //newNotePage = NewNotePage;
 
   notes: FirebaseListObservable<any[]>;
 
@@ -19,6 +32,12 @@ export class HomePage {
                 this.notes = af.database.list('/notes');
 
   }
+
+    goToOtherPage() {
+    //push another page onto the history stack
+    //causing the nav controller to animate the new page in
+    this.navCtrl.push(NewNotePage);
+    }
 
   addItem(){
     let prompt = this.alertCtrl.create(

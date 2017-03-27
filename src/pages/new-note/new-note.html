@@ -7,16 +7,24 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>newNote</ion-title>
+    <ion-title>New Note</ion-title>
   </ion-navbar>
 
+    <ion-toolbar>
+      <ion-buttons end>
+      <button (click)="saveNote()" >
+        <ion-icon name="done-all"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+  
 </ion-header>
-
 
 <ion-content padding>
 
   
-  This is my super awesome about page.
+  <ion-input name="title" type="text" placeholder="Title"></ion-input>
+  <ion-textarea name="content" height="auto" rows="10" placeholder="Note"></ion-textarea>
 
 
 </ion-content>

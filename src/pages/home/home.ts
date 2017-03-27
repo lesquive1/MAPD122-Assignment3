@@ -51,7 +51,8 @@ export class HomePage {
           },
           {
             name: "content",
-            placeholder: "new note"
+            placeholder: "new note",
+            type: "textarea"
           },
           {
             name: "date",

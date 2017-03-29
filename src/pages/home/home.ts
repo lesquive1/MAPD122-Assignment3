@@ -84,4 +84,36 @@ export class HomePage {
     prompt.present();
   }  
 
+  showOptions(noteId){
+    let actionSheet = this.actionSheetCtrl.create(
+      {
+        title:"What do you want to do?",
+        buttons:[
+          {
+            text:"Delete",
+            role:"destructive",
+            handler:()=>{
+              this.removeItem(noteId);
+            }
+          },
+          {
+            text:"Cancel",
+            role: "cancel",
+            handler:()=>{
+              console.log("Cancel");
+            }
+          }
+        ]
+      }
+    );
+    actionSheet.present();
+  }
+
+    removeItem(noteId: string){
+    console.log(noteId);
+    this.notes.remove(noteId);
+  }
+
 }
+
+

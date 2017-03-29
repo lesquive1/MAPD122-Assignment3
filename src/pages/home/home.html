@@ -15,7 +15,8 @@
 <ion-content padding>
 
   <ion-list>
-    <ion-item class="text" *ngFor="let note of notes | async" >
+    <ion-item class="text" *ngFor="let note of notes | async"
+              (click)="showOptions(note)" >
       <h2>{{note['title']}}</h2>
       <h3>{{note['date']}}</h3>
       <p>{{note['content']}}</p>

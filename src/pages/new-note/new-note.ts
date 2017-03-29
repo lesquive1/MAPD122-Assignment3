@@ -31,11 +31,13 @@ export class NewNotePage {
     console.log('ionViewDidLoad NewNotePage');
   }
 
-  saveNote(title, content) {
-
+  saveNote() {
+        //var canvasElement = angular.element(document.querySelector('#page-6-canvas'));
+        var title = document.getElementById("title");
+        var note = document.getElementById("note");
         var someData = {
             title: title,
-            content: content,
+            content: note,
             date: Date()
         };
 

@@ -17,11 +17,6 @@ import {NewNotePage} from '../new-note/new-note';
 })
 export class HomePage {
 
-  // First page to push onto the stack
-  // rootPage = StartPage;
-
-  //newNotePage = NewNotePage;
-
   notes: FirebaseListObservable<any[]>;
 
   constructor(public navCtrl: NavController, 

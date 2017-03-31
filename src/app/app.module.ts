@@ -9,6 +9,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { NewNotePage } from '../pages/new-note/new-note';
 import { AngularFireModule } from 'angularfire2';
 
+import { SocialSharing } from '@ionic-native/social-sharing';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -44,6 +46,7 @@ export const firebaseConfig = {
   ],
   providers: [
     StatusBar,
+    SocialSharing,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

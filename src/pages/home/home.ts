@@ -10,6 +10,9 @@ import {NewNotePage} from '../new-note/new-note';
 //import {Page} from 'ionic-angular';
 //import {AboutPage} from '../about/about';
 
+import { SocialSharing } from '@ionic-native/social-sharing';
+
+
 
 @Component({
   selector: 'page-home',
@@ -22,7 +25,8 @@ export class HomePage {
   constructor(public navCtrl: NavController, 
               af: AngularFire, 
               public alertCtrl: AlertController, 
-              public actionSheetCtrl: ActionSheetController) {
+              public actionSheetCtrl: ActionSheetController,
+              public socialSharing: SocialSharing) {
 
                 this.notes = af.database.list('/notes');
 
@@ -90,6 +94,11 @@ export class HomePage {
             handler:()=>{
               this.removeItem(noteId);
             }
+          },{
+            text:"Share",
+            handler:()=>{
+              this.shareNote(noteId);
+            }
           },
           {
             text:"Cancel",
@@ -107,6 +116,11 @@ export class HomePage {
     removeItem(noteId: string){
     console.log(noteId);
     this.notes.remove(noteId);
+  }
+
+  shareNote(noteId: string){
+    let mShare = this.socialSharing.share("Hola mundo", "sharing");
+    console.log(mShare);
   }
 
 }

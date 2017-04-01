@@ -23,7 +23,7 @@ export class HomePage {
   notes: FirebaseListObservable<any[]>;
 
   constructor(public navCtrl: NavController, 
-              af: AngularFire, 
+              public af: AngularFire, 
               public alertCtrl: AlertController, 
               public actionSheetCtrl: ActionSheetController,
               public socialSharing: SocialSharing) {
@@ -83,7 +83,7 @@ export class HomePage {
     prompt.present();
   }  
 
-  showOptions(noteId){
+  showOptions(noteId, title, content){
     let actionSheet = this.actionSheetCtrl.create(
       {
         title:"What do you want to do?",
@@ -97,7 +97,7 @@ export class HomePage {
           },{
             text:"Share",
             handler:()=>{
-              this.shareNote(noteId);
+              this.shareNote(title, content);
             }
           },
           {
@@ -118,9 +118,19 @@ export class HomePage {
     this.notes.remove(noteId);
   }
 
-  shareNote(noteId: string){
-    let mShare = this.socialSharing.share("Hola mundo", "sharing");
-    console.log(mShare);
+  shareNote(title: string, content: string){
+    let mShare = this.socialSharing.share(title, content);
+
+
+    // var mnote: FirebaseListObservable<any[]>;
+    // mnote = this.af.database.list('/notes', {
+    //   query: {
+    //     equalTo: noteId
+    //   }
+    // });
+
+    //console.log(noteId);
+    //console.log(mShare);
   }
 
 }

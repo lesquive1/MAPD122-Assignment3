@@ -16,7 +16,7 @@
 
   <ion-list>
     <ion-item class="text" *ngFor="let note of notes | async"
-              (click)="showOptions(note)" >
+              (click)="showOptions(note, note.title, note.content)" >
       <h2>{{note['title']}}</h2>
       <h3>{{note['date']}}</h3>
       <p>{{note['content']}}</p>

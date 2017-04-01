@@ -5,6 +5,8 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 
+import { HomePage } from '../home/home';
+
 // import { Note } from './note';
 
 
@@ -38,6 +40,7 @@ export class NewNotePage {
 
     this.notes.push( this.todo.value );
     console.log(this.todo.value);
+    this.navCtrl.popTo(HomePage);
   }
 
 }
